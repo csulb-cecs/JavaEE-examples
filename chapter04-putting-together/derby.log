@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Jan 28 15:17:41 PST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0143-db24-d7a2-00000c9a1268 
+on database directory memory:/Users/alvaro/NetBeansProjects/423/examples/chapter04-putting-together/chapter04DB with class loader sun.misc.Launcher$AppClassLoader@612dcb8c 
+Loaded from file:/Users/alvaro/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=/Users/alvaro/NetBeansProjects/423/examples/chapter04-putting-together
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.9.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
