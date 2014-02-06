@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:body>
+        <ui:composition template="./WEB-INF/templates/layout.xhtml">
+            <ui:define name="title">Home</ui:define>
+            <ui:define name="content">
+                <h2>JavaEE Web Application Security</h2>
+                <p>This is an example of a Java EE Web application that applies security concepts.
+                    In particular, this application uses:
+                </p>
+                <ul>
+                    <li><strong>Container managed security</strong>: the Servlet and EJB container (in this case GlassFish)
+                        handles the authentication and authorization secured resources.
+                    </li>
+                    <li>A <strong>Filter</strong> guarantees that on any request, if a user has been authenticated, then
+                        the user session will contain a User object representing that user.
+                    </li>
+                    <li>In the deployment descriptor, <code>web.xml</code>, a developer specifies the
+                        resources that are to be secured. A <strong>security constraint</strong> is defined by an access
+                        to a resource that matches a URL pattern and by the security roles that are
+                        authorized to have access to matched resources.
+                    </li>
+                    <li>The <strong>security roles</strong> defined by the web application need to be mapped to groups that
+                        are used by the container. The default mapping can be enabled, such that,
+                        roles map directly to groups with the same name as the role.
+                    </li>
+                </ul>
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+

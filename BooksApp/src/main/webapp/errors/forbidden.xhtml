@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:bk="http://xmlns.jcp.org/jsf/composite/bookstore">
+    <h:body>
+        <ui:composition template="/WEB-INF/templates/layout.xhtml">
+            <ui:define name="title">Unauthorized access to Bookstore</ui:define>
+            <ui:define name="content">
+                <p>You have attempted to obtain a resource for which you don't have enough permissions.
+                    You should return to the <h:link outcome="/index" value="Bookstore home page"></h:link>
+                    and access only the resources that you are authorized to use.
+                </p>
+                <h:messages/>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 template="/WEB-INF/templates/layout.xhtml"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="title">Account</ui:define>
+    <ui:define name="content">
+        <h1>Information about your account</h1>
+        <p>Hello #{userController.user.firstName}! Welcome back to the Bookstore</p>
+        <p>In this page, you will be able to request additional services from
+            the Bookstore. If you'd like to start using the Bookstore, you should return to the
+            <h:link outcome="/index" value="Bookstore home page"></h:link>
+        </p>
+    </ui:define>
+</ui:composition>
+

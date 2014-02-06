@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:body>
+        <ui:composition template="./WEB-INF/templates/layout.xhtml">
+            <ui:define name="title">Home</ui:define>
+            <ui:define name="content">
+            <h1>Books available in our bookstore</h1>
+            <h:dataTable value="#{bookstoreController.bookList}" var="bk" >
+               <h:column>
+                  <f:facet name="header">
+                     <h:outputText value="ISBN"/>
+                  </f:facet>
+                  <h:outputText value="#{bk.isbn}"/>
+               </h:column>
+
+               <h:column>
+                  <f:facet name="header">
+                     <h:outputText value="#{msg.book_title}"/>
+                  </f:facet>
+                  <h:outputText value="#{bk.title}"/>
+               </h:column>
+
+               <h:column>
+                  <f:facet name="header">
+                     <h:outputText value="Price"/>
+                  </f:facet>
+                  <h:outputText value="#{bk.price}"/>
+               </h:column>
+
+               <h:column>
+                  <f:facet name="header">
+                     <h:outputText value="#{msg.book_description}"/>
+                  </f:facet>
+                  <h:outputText value="#{bk.description}"/>
+               </h:column>
+
+               <h:column>
+                  <f:facet name="header">
+                     <h:outputText value="#{msg.book_pages}"/>
+                  </f:facet>
+                  <h:outputText value="#{bk.nbOfPage}"/>
+               </h:column>
+
+               <h:column>
+                  <f:facet name="header">
+                     <h:outputText value="Illustrations"/>
+                  </f:facet>
+                   <c:if test="#{not empty bk or bk.illustrations}">Yes</c:if>
+                   <c:otherwise>No</c:otherwise>
+               </h:column>
+
+            </h:dataTable>
+         </ui:define>
+      </ui:composition>
+   </h:body>
+</html>

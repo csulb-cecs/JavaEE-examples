@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>es</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>edu.csulb.cecs423.booksapp.i18n.Text</base-name>
+            <var>msg</var>
+        </resource-bundle>
+        
+        <!-- NAVIGATION RULES -->
+
+        <navigation-rule>
+            <from-view-id>*</from-view-id>
+            <navigation-case>
+                <from-action>#{registration.registerUser}</from-action>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml?registered=true</to-view-id>
+                <redirect/>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+            <navigation-case>
+                <from-outcome>register</from-outcome>
+                <to-view-id>/authentication/register.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+            <from-view-id>*</from-view-id>
+            <navigation-case>
+                <from-outcome>home</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+                <redirect/>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>login</from-outcome>
+                <to-view-id>/account/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>book.add</from-outcome>
+                <to-view-id>/manager/book.add.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>books.list</from-outcome>
+                <to-view-id>/books.list.xhtml</to-view-id>
+                <redirect/>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>failure</from-outcome>
+                <to-view-id>/errors/internal_error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+        
+    </application>
+
+</faces-config>

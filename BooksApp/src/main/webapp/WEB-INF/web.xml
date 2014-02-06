@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name> <!-- SEE: http://stackoverflow.com/questions/13861612/jsf-2-composite-components-inside-web-inf -->
+        <param-value>/WEB-INF/resources</param-value> 
+    </context-param>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+    <!-- SECURITY SETTINGS -->
+    <security-constraint>
+        <display-name>User functionality</display-name>
+        <web-resource-collection>
+            <web-resource-name>user functions</web-resource-name>
+            <description>user role required</description>
+            <url-pattern>/faces/account/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Have the role of user</description>
+            <role-name>bookstore.user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <display-name>Manager functionality</display-name>
+        <web-resource-collection>
+            <web-resource-name>manager functions</web-resource-name>
+            <description>manager role required</description>
+            <url-pattern>*.add.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Have the role of manager</description>
+            <role-name>bookstore.manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-role>
+        <description>Bookstore user</description>
+        <role-name>bookstore.user</role-name>
+    </security-role>
+    <security-role>
+        <description>Bookstore manager</description>
+        <role-name>bookstore.manager</role-name>
+    </security-role>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>SecuredAppRealm</realm-name>
+        <form-login-config>
+            <form-login-page>/faces/authentication/login.xhtml</form-login-page>
+            <form-error-page>/faces/authentication/login.xhtml?error=true</form-error-page>
+        </form-login-config>
+    </login-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/faces/errors/unknown.xhtml</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/faces/errors/forbidden.xhtml</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/faces/errors/internal_error.xhtml</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/faces/errors/internal_error.xhtml?exception=true</location>
+    </error-page>
+</web-app>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:body>
+        <ui:composition template="/WEB-INF/templates/layout.xhtml">
+            <ui:define name="title">Register as a user in the Bookstore</ui:define>
+            <ui:define name="content">
+                <p>Register as a user of the site to be granted additional functionality.</p>
+
+                <h:form id="registration">
+                    <fieldset>
+                        <legend>Register now!</legend>
+                        <ul>
+                            <li>
+                                <label for="fname">First Name</label>
+                                <h:inputText id="fname" value="#{registration.newUser.firstName}"
+                                             required="true" requiredMessage="Your first name is required"/>
+                                <h:message for="fname" styleClass="message_all" />
+                            </li>
+                            <li>
+                                <label for="lname">Last Name</label>
+                                <h:inputText id="lname" value="#{registration.newUser.lastName}"
+                                             required="true"  requiredMessage="Your last name is required"/>
+                                <h:message for="lname" styleClass="message_all" />
+                            </li>
+                            <li>
+                                <label for="email">Email Address</label>
+                                <h:inputText id="email" value="#{registration.newUser.email}" 
+                                             required="true"  requiredMessage="Your email address is required"
+                                             validator="#{basicValidator.validateEmail}" />
+                                <h:message for="email" styleClass="message_all" />
+                            </li>
+                            <li>
+                                <label for="password">Password</label>
+                                <h:inputSecret id="password" value="#{registration.newUser.password}"
+                                               required="true"  requiredMessage="Your must provide a password" />
+                                <h:message for="password" styleClass="message_all" />
+                            </li>
+                            <li>
+                                <label for="passwordConfirmation">Confirm password</label>
+                                <h:inputSecret id="passwordConfirmation" value="#{registration.passwordConfirmation}"
+                                               required="true"  requiredMessage="You need to confirm your password">
+                                    <f:validator validatorId="duplicateFieldValidator" />
+                                    <f:attribute name="field1" value="registration:password" />
+                                    <f:attribute name="fieldNames" value="Passwords" />
+                                </h:inputSecret>
+                                <h:message for="passwordConfirmation" styleClass="message_all" />
+                            </li>
+                            <li>
+                                <h:commandButton value="Register" action="#{registration.registerUser}" />
+                            </li>
+                            <li>
+                                To cancel, return to the <h:link outcome="/index" value="Bookstore home page"></h:link>.
+                            </li>
+                        </ul>
+                    </fieldset>
+                </h:form>
+                <p><h:messages  styleClass="message_all" /></p>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

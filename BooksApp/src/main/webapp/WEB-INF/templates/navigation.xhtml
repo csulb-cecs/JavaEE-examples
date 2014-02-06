@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:body>
+        <ui:composition>
+            <h3>The Bookstore</h3>
+            <ul>
+                <li><h:link outcome="/books_list" value="Books available" /></li>
+                <c:if test="#{userController.isManager}">
+                    <li><h:link outcome="book.add" value="Add a book"></h:link></li>
+                </c:if>
+            </ul>
+
+            <h3>Account</h3>
+            <c:if test="#{!empty param['registered']}">
+                <p><strong>You're now a registered Bookstore user!</strong>
+                    You should login to access more of the Bookstore.</p>
+            </c:if>
+            <ul>
+                <c:choose>
+                    <c:when test="#{userController.isUserAuthenticated}">
+                        <li><h:form><h:commandLink action="#{userController.logout}">Logout</h:commandLink></h:form></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><h:link outcome="/authentication/login" value="Login"></h:link>
+                        </li>
+                        <li><h:link outcome="/authentication/register" value="Register"></h:link></li>
+                    </c:otherwise>
+                </c:choose>
+            </ul>
+        </ui:composition>
+    </h:body>
+</html>
+

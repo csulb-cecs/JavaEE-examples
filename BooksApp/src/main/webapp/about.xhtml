@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 template="./WEB-INF/templates/layout.xhtml"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="title">About</ui:define>
+    <ui:define name="content">
+        <h2>About the Secured JavaEE Web Application</h2>
+        <p>This is a Java EE web application demonstrating several pieces of technology. In particular,
+            it demonstrates how to write a web application that uses container base authentication
+            and authorization. In addition, it also demonstrates using the JSF Facelets templates,
+            and a custom validator.
+        </p>
+
+        <h2>Completed updates for this web application</h2>
+        <ol>
+            <li><strong>Move all security database to the web app</strong>. Now to execute
+                the web app, one needs to create a
+                security realm in the container just for the web app. The instructions for this
+                are on Server Resources/README-security-settings.txt.  Now that the web app
+                database holds all security information, there's
+                no single sign-on (but that was not tested anyway). The major benefit is
+                that now the web app is more
+                portable as there is only one database. All user information is contained in
+                the same database, there's not need to access a different database just to
+                find out the user's password or security groups.
+            </li>
+            <li>Some developers believe using EJB's is like <q>using a bazooka to kill a fly</q>.
+                However as used in this sample application, we rely on EJB's to handle the
+                injection of the persistent unit and to have all EJB-provided services (methods)
+                in a transaction. This leads to less code and of course, the most important
+                aspect is that EJB's is where we should define the business logic.
+            </li>
+            <li>Implemented a validator to allow password confirmation.</li>
+            <li>Uses <h:outputLink value="http://www.oswd.org/design/preview/id/2828">stylesheet Nautica from OSWD</h:outputLink>
+            </li>
+            <li>Code has been restructured better into packages</li>
+            <li>Uses JSF 2.0 Facelet templates</li>
+            <li>After user registers successfully... home page display a message letting
+                the user know of the successful registration.
+            </li>
+        </ol>
+
+        <h2>Planned updates for this web application</h2>
+        <ol>
+            <li>Login/Logout/Register buttons at the top-right... along with "Welcome Alvaro"
+            </li>
+            <li>Add more data to the books database
+            </li>
+            <li>Fix tab order for key pages (i.e. any with forms)
+            </li>
+        </ol>
+
+    </ui:define>
+</ui:composition>
