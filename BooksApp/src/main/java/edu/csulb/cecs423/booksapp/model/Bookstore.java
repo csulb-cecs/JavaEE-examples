@@ -20,7 +20,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 /**
- *
+ * Bookstore is a stateless session EJB that encapsulates the basic bookstore
+ * services to retrieve all books and create a book.
+ * 
  * @author Alvaro Monge <alvaro.monge@csulb.edu>
  */
 @Stateless
@@ -30,18 +32,18 @@ public class Bookstore {
     private EntityManager em;
 
     /**
-     * Retrieve the list of Books currently in the Bookstore, anyone is allowed to request this
+     * gets the list of books currently in the Bookstore, anyone is allowed to request this
      * @return the list of Books in the Bookstore
      */
-    public List<Book> findBooks() {
+    public List<Book> getBooks() {
         TypedQuery<Book> query = em.createNamedQuery(Book.FIND_ALL_BOOKS, Book.class);
         return query.getResultList();
     }
 
     /**
-     * create a Book on the database, but only if the user requesting it has the role bookstore.manager
-     * @param book the Book to be added to the database.
-     * @return the Book object if persisted correctly, null otherwise.
+     * creates a book on the database, but only if the user requesting it has the role bookstore.manager
+     * @param book the book to be added to the database.
+     * @return the book object if persisted correctly, <code>null</code> otherwise.
      */
     @RolesAllowed("bookstore.manager")
     public Book createBook(Book book) {
@@ -56,7 +58,7 @@ public class Bookstore {
     /**
      * TODO: not the best place for this since this EJB is also doing bookstore stuff
      * 
-     * Register a user into the bookstore app and the the security realm
+     * registers a user into the bookstore app and with the security realm
      * @param user the User to be registered
      * @param groupName the group that User is to be registered with
      * @throws UserExistsException when there is already a user w/same username
@@ -81,6 +83,11 @@ public class Bookstore {
         }
     }
 
+    /**
+     * finds a user given the username
+     * @param username the string what is the username to be found
+     * @return the user with the matching username; <code>null</code> otherwise
+     */
     @PermitAll
     public User find(String username) {
         return em.find(User.class, username);

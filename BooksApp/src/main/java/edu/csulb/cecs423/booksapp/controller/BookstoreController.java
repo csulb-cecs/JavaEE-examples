@@ -45,7 +45,7 @@ public class BookstoreController implements Serializable {
       try {
          newBook = bookstore.createBook(newBook);
          if (newBook != null) {
-            bookList = bookstore.findBooks();
+            bookList = bookstore.getBooks();
             result = "success";  // return books.list instead?
          }
       } catch (javax.ejb.EJBAccessException ejbae) {
@@ -84,7 +84,7 @@ public class BookstoreController implements Serializable {
     */
    public List<Book> getBookList() {
       if (bookList.isEmpty()) {
-         bookList = bookstore.findBooks();
+         bookList = bookstore.getBooks();
       }
       return bookList;
    }

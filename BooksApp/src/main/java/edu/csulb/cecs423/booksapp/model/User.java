@@ -17,9 +17,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
- *
+ * User encapsulates the users that have registered for this app.
+ * 
  * @author Alvaro Monge <alvaro.monge@csulb.edu>
  */
 @Entity(name="Users")
@@ -44,42 +47,82 @@ public class User implements Serializable {
     @ManyToMany(mappedBy="users", cascade=CascadeType.ALL)
     private Collection<Group> groups;
 
+    /**
+     * gets the email address of this user
+     * @return the email address this user has
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * sets the e-mail address for this user
+     * @param email the email address to use for this user
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * gets the first name of this user
+     * @return the first name of this user
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * sets the first name of this user 
+     * @param firstName the string to user as the first name of this user
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * gets the last name of this user
+     * @return the last name of this user
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * sets the last name of this user 
+     * @param lastName the string to user as the last name of this user
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * gets the password for this user
+     * @return the string that is the password of this user
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * sets the password for this user
+     * @param password is the string to be assigned to this user
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * gets the groups that this user is a member of
+     * @return a collection of groups that this user belongs to
+     */
     public Collection<Group> getGroups() {
         return groups;
     }
 
+    /**
+     * sets the groups that this user belongs to
+     * @param groups is the collection of groups that this user is a member of
+     */
     public void setGroups(Collection<Group> groups) {
         this.groups = groups;
     }
@@ -90,11 +133,16 @@ public class User implements Serializable {
      */
     public void addGroup(Group group) {
         if (this.groups == null)
-            this.groups = new HashSet<Group>();
+            this.groups = new HashSet();
         this.groups.add(group);
     }
 
-
+    /**
+     * determines whether or not the information for this book is valid
+     * @param confirmPassword the password to be confirmed
+     * @return <code>true</code> if this book has valid information; 
+     *         <code>false</code> otherwise
+     */
     public boolean isInformationValid(String confirmPassword) {
         return (firstName != null && lastName != null
                  && email != null && password != null

@@ -20,13 +20,17 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
- *
+ * Group encapsulates a security group and is used for role-based authorization.
+ * It maintains a collection of users and thus all users in a group will have
+ * the same role and thus share be authorized to have the same permissions.
+ * It's possible for a user to be part of many groups.
+ * 
  * @author Alvaro Monge <alvaro.monge@csulb.edu>
  */
-@Entity
+@Entity(name="UserGroup")
 @Table(name="groups")
 @NamedQueries ({
-    @NamedQuery(name = Group.FIND_GROUP_BY_USERNAME, query = "SELECT g FROM Group g WHERE g.name = :groupname")
+    @NamedQuery(name = Group.FIND_GROUP_BY_USERNAME, query = "SELECT g FROM UserGroup g WHERE g.name = :groupname")
 })
 public class Group implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -45,39 +49,74 @@ public class Group implements Serializable {
           inverseJoinColumns=@JoinColumn(name="email"))
     private Collection<User> users;
 
+    /**
+     * 
+     */
     public Group() { }
 
+    /**
+     * creates a group with the given name
+     * @param name is the name of the group to be created
+     */
     public Group(String name) {
         this.name = name;
     }
 
+    /**
+     * gets the name of this group
+     * @return the name of this group
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * sets the name of this group 
+     * @param name is the string that is to be the name of this group
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * gets the description of this group
+     * @return is the string describing this group
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * sets the description of this group
+     * @param description is the string to be used to describe this group
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * gets the collection of users that are members of this group
+     * @return the collection of users in this group
+     */
     public Collection<User> getUsers() {
         return users;
     }
 
+    /**
+     * sets the collection of users in this group
+     * @param users the collection of users in this group
+     */
     public void setUsers(Collection<User> users) {
         this.users = users;
     }
 
+    /**
+     * adds a user to this group
+     * @param user is the user to be added to this group
+     */
     public void addUser(User user) {
         if (this.users == null)
-            this.users = new HashSet<User>();
+            this.users = new HashSet();
         this.users.add(user);
     }
 
@@ -100,7 +139,13 @@ public class Group implements Serializable {
 
     @Override
     public String toString() {
-        return "edu.csulb.cecs423.booksapp.model.Group[ id=" + name + " ]";
+        final StringBuilder sb = new StringBuilder();
+        sb.append("Group");
+        sb.append("{name=").append(name);
+        sb.append(", description='").append(description);
+        sb.append('}');
+        return sb.toString();
+
     }
     
 }

@@ -19,7 +19,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- *
+ * Book encapsulates the information representing a book. Each book is 
+ * automatically assigned an identifier, though, each book must have
+ * a unique isbn.
+ * 
  * @author Alvaro Monge <alvaro.monge@csulb.edu>
  */
 @Entity
@@ -44,69 +47,133 @@ public class Book implements Serializable {
     @Size(max = 2000)
     @Column(length = 2000)
     private String description;
+    @Column(unique = true)
     private String isbn;
     private Integer nbOfPage;
     private boolean illustrations;
 
-
+    /**
+     * gets the unique identifier of this book
+     * @return the id of this book
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * sets the unique identifier of this book
+     * @param id   the unique identifier of this book
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * gets the string holding the title of this book
+     * @return the title of this book
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * sets the title of this book
+     * @param title  the string to use for the title of this book
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /**
+     * gets the price of this book
+     * @return the price of this book price
+     */
     public Float getPrice() {
         return price;
     }
 
+    /**
+     * sets the price of this book
+     * @param price the amount to be used as the title of this book
+     */
     public void setPrice(Float price) {
         this.price = price;
     }
 
+    /**
+     * gets the description of this book
+     * @return the string giving a description of this book
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * sets the description of this book
+     * @param description the string that has the description of this book
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * gets the isbn of this book
+     * @return the string that is the isbn of this book
+     */
     public String getIsbn() {
         return isbn;
     }
 
+    /**
+     * sets the isbn of this book, it's required to be unique
+     * @param isbn is the string with the isbn of this book
+     */
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
+    /**
+     * gets the number of pages of this book
+     * @return the number of pages of this book
+     */
     public Integer getNbOfPage() {
         return nbOfPage;
     }
 
+    /**
+     * sets the number of pages this book has
+     * @param nbOfPage the number of page of this book
+     */
     public void setNbOfPage(Integer nbOfPage) {
         this.nbOfPage = nbOfPage;
     }
 
+    /**
+     * tests to determine if the book as illustrations
+     * @return <code>true</code> if the book has illustrations; 
+     *         <code>false</code> otherwise
+     */
     public boolean isIllustrations() {
         return illustrations;
     }
 
+    /**
+     * sets whether or not this book has illustrations
+     * @param illustrations is the boolean representing whether or not this book has illustrations
+     */
     public void setIllustrations(boolean illustrations) {
         this.illustrations = illustrations;
     }
     
+    /**
+     * tests to see if this book is valid
+     * @return <code>true</code> if this book has valid values (it has a title
+     *              and an isbn;
+     *         <code>false</code> otherwise
+     */
     public boolean isValid() {
-        return (title != null && title.length() > 0);
+        return (title != null && title.length() > 0 &&
+                isbn != null && isbn.length() > 0);
     }
 
     @Override
@@ -134,6 +201,7 @@ public class Book implements Serializable {
         final StringBuilder sb = new StringBuilder();
         sb.append("Book");
         sb.append("{id=").append(id);
+        sb.append(", ibsn='").append(isbn).append('\'');
         sb.append(", title='").append(title).append('\'');
         sb.append(", price=").append(price);
         sb.append(", description='").append(description).append('\'');
