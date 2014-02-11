@@ -20,14 +20,14 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
- *
+ * BoolstoreBean encapsulates the services that define a bookstore.
  * @author Alvaro Monge <alvaro.monge@csulb.edu>
  */
 @Named
 @RequestScoped
-public class BookstoreController implements Serializable {
+public class BookstoreBean implements Serializable {
    private static final long serialVersionUID = 1L;
-   private static final Logger logger = Logger.getLogger("BookstoreController");
+   private static final Logger logger = Logger.getLogger("BookstoreBean");
 
    @EJB
    private Bookstore bookstore;

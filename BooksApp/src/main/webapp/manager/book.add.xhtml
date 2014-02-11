@@ -14,41 +14,41 @@
                         <ul>
                             <li>
                                 <h:outputLabel value="ISBN : "/>
-                                <h:inputText id ="isbn" value="#{bookstoreController.newBook.isbn}"
+                                <h:inputText id ="isbn" value="#{bookstoreBean.newBook.isbn}"
                                              required="true" requiredMessage="" />
                                 <h:message for="isbn" styleClass="message_all" />
                             </li>
                             <li>
                                 <h:outputLabel value="#{msg.book_title}"/>
-                                <h:inputText id ="title" value="#{bookstoreController.newBook.title}"
+                                <h:inputText id ="title" value="#{bookstoreBean.newBook.title}"
                                              required="true" requiredMessage="" />
                                 <h:message for="title" styleClass="message_all" />
                             </li>
                             <li>
                                 <h:outputLabel value="#{msg.price}"/>
-                                <h:inputText id ="price" value="#{bookstoreController.newBook.price}"
+                                <h:inputText id ="price" value="#{bookstoreBean.newBook.price}"
                                              required="true" requiredMessage="#{msg.price_missing}" />
                                 <h:message for="price" styleClass="message_all" />
                             </li>
                             <li>
                                 <h:outputLabel value="#{msg.book_description}"/>
-                                <h:inputTextarea id ="description" value="#{bookstoreController.newBook.description}" cols="20" rows="5"/>
+                                <h:inputTextarea id ="description" value="#{bookstoreBean.newBook.description}" cols="20" rows="5"/>
                                 <h:message for="description" styleClass="message_all" />
                             </li>
                             <li>
                                 <h:outputLabel value="#{msg.book_pages}"/>
-                                <h:inputText id ="pages" value="#{bookstoreController.newBook.nbOfPage}"
-                                             required="true" requiredMessage="#{msg.pages_missing}" />
+                                <h:inputText id ="pages" value="#{bookstoreBean.newBook.nbOfPage}" 
+                                                                  required="true" requiredMessage="#{msg.pages_missing}" />
                                 <h:message for="pages" styleClass="message_all" />
                             </li>
                             <li>
                                 <h:outputLabel value="#{msg.illustrations}"/>
-                                <h:selectBooleanCheckbox id ="illustrations" value="#{bookstoreController.newBook.illustrations}"/>
+                                <h:selectBooleanCheckbox id ="illustrations" value="#{bookstoreBean.newBook.illustrations}"/>
                             </li>
                         </ul>
                     </fieldset>
-                    <h:commandButton value="#{msg.create_book}" action="#{bookstoreController.doCreateBook}"/>
-                </h:form>
+                    <h:commandButton value="#{msg.create_book}" action="#{bookstoreBean.doCreateBook}"/>
+                 </h:form>
             </ui:define>
         </ui:composition>
     </h:body>

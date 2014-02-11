@@ -21,14 +21,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * 
  * @author Alvaro Monge <alvaro.monge@csulb.edu>
  */
 @Named
 @SessionScoped
-public class UserController implements Serializable {
+public class UserBean implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = Logger.getLogger("UserController");
+    private static final Logger logger = Logger.getLogger("UserBean");
 
     private User user; // used during registration and while session is active
 
@@ -36,7 +36,7 @@ public class UserController implements Serializable {
     private Bookstore bookstore;
 
     /** Creates a new instance of UserIdentity */
-    public UserController() {
+    public UserBean() {
         user = null;
     }
     /**

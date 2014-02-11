@@ -22,7 +22,7 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- *
+ * DuplicateFieldValidator extends the Validator class to determine if two fields are duplicates
  * @author Brian Leathem in StackOverflow
  * http://stackoverflow.com/questions/2909021/jsf-2-0-validate-equality-of-2-inputsecret-fields-confirm-password-without-wri
  */

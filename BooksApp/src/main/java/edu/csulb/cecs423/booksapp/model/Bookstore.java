@@ -58,7 +58,8 @@ public class Bookstore {
     /**
      * TODO: not the best place for this since this EJB is also doing bookstore stuff
      * 
-     * registers a user into the bookstore app and with the security realm
+     * registers a user assigning a group that will give user authority to 
+     * perform functions associated with the group.
      * @param user the User to be registered
      * @param groupName the group that User is to be registered with
      * @throws UserExistsException when there is already a user w/same username

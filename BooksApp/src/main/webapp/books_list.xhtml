@@ -10,7 +10,7 @@
             <ui:define name="title">Home</ui:define>
             <ui:define name="content">
             <h1>Books available in our bookstore</h1>
-            <h:dataTable value="#{bookstoreController.bookList}" var="bk" >
+            <h:dataTable value="#{bookstoreBean.bookList}" var="bk" >
                <h:column>
                   <f:facet name="header">
                      <h:outputText value="ISBN"/>

@@ -9,7 +9,7 @@
             <h3>The Bookstore</h3>
             <ul>
                 <li><h:link outcome="/books_list" value="Books available" /></li>
-                <c:if test="#{userController.isManager}">
+                <c:if test="#{userBean.isManager}">
                     <li><h:link outcome="book.add" value="Add a book"></h:link></li>
                 </c:if>
             </ul>
@@ -21,8 +21,8 @@
             </c:if>
             <ul>
                 <c:choose>
-                    <c:when test="#{userController.isUserAuthenticated}">
-                        <li><h:form><h:commandLink action="#{userController.logout}">Logout</h:commandLink></h:form></li>
+                    <c:when test="#{userBean.isUserAuthenticated}">
+                        <li><h:form><h:commandLink action="#{userBean.logout}">Logout</h:commandLink></h:form></li>
                     </c:when>
                     <c:otherwise>
                         <li><h:link outcome="/authentication/login" value="Login"></h:link>

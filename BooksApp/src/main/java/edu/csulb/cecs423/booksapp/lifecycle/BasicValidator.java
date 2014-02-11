@@ -27,12 +27,13 @@ public class BasicValidator {
     }
 
     /**
-     * TODO: currently only checks for @ symbol, need to implement a more sophisticated validator
-     * Validate an e-mail address to be in the (basic) correct format.
+     * validates an e-mail address to be in the (basic) correct format.
      * @param context the FacesContext
-     * @param toValidate the UIComponent being validated
+     * @param toValidate the UIComponent being validated (e-mail field)
      * @param value the value (email address) of the component
      * @throws ValidatorException the Exception to throw b/c the value is not an e-mail address
+     * 
+     * TODO: currently only checks for @ symbol, need to implement a more sophisticated validator
      */
     public void validateEmail(FacesContext context, UIComponent toValidate, Object value) throws ValidatorException {
         String emailStr = (String) value;
