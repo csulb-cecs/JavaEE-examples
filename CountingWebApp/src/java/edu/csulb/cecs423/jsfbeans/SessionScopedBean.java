@@ -28,5 +28,13 @@ public class SessionScopedBean extends BaseBean {
     public String getMessage() {
         return "There's one of me per session!  " + super.getMessage();
     }
+    
+    /**
+     * Can annotate methods with @PostConstruct to initialize the bean
+     * and annotate it with @PreDestroy to clean up just prior to the bean
+     * being removed by the container. This is part of the life-cycle management
+     * of a bean since a developer does not explicitly create one.
+     * 
+     */
 
 }

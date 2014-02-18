@@ -1,6 +1,7 @@
 package edu.csulb.cecs423.jsfbeans;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -38,6 +39,15 @@ public class RequestScopedBean extends BaseBean {
 
         // outcome of this action... index will return navigation to index.html
         return "index";
+    }
+    
+    /**
+     * Invalidate a session and redirect
+     * @return index to navigate to the start page
+     */
+    public String resetSession() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "/index.xhtml?faces-redirect=true";
     }
 
 }
