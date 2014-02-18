@@ -1,0 +1,33 @@
+/* 
+    Document   : master
+    Created on : Feb 14, 2011, 11:26:01 AM
+    Author     : Alvaro Monge <amonge at csulb.edu>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+    width: 80%;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    background-color: #ffffcc;
+}
+
+ul {
+    font-size: 90%;
+}
+
+li {
+    padding-bottom: 1.5em;
+}
+
+li ul li {
+    padding-bottom: 0em;
+}
+
+fieldset {
+    width: 50%;
+}

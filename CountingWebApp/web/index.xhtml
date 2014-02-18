@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Counting Beans</title>
+        <h:outputStylesheet library="css" name="master.css" />
+    </h:head>
+    <h:body>
+        <h1>JSF Managed Bean Counters</h1>
+        <p>This web application demonstrates some of the differences
+            between the various scopes where a JSF managed bean
+            can be managed.</p>
+        <ul>
+            <li><h:outputText value="#{applicationScopedBean.message}" />
+                <ul>
+                    <li>Created: <h:outputText value="#{applicationScopedBean.timeStamp}" /></li>
+                    <li>Counter: <h:outputText value="#{applicationScopedBean.counter}" /></li>
+                </ul>
+            </li>
+            <li>#{sessionScopedBean.message}
+                <ul>
+                    <li>Created: <h:outputText value="#{sessionScopedBean.timeStamp}" /></li>
+                    <li>Counter: <h:outputText value="#{sessionScopedBean.counter}" /></li>
+                </ul>
+            </li>
+
+            <li>#{requestScopedBean.message}
+                <ul>
+                    <li>Created: <h:outputText value="#{requestScopedBean.timeStamp}" /></li>
+                    <li>Counter: <h:outputText value="#{requestScopedBean.counter}" /></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Change the counter</h2>
+        <p>By pressing the following button, you will be invoking a JSF action method that is
+            part of the RequestScopedBean object created for the request.  The action method
+            will increment all counters by one. As shown above, there are several counters.</p>
+          <h:form>
+              <fieldset>
+                  <legend>Update the beans</legend>
+                  <h:commandButton value="Increase Counters" action="#{requestScopedBean.incrementCounters}" />
+            </fieldset>
+          </h:form>
+
+    </h:body>
+</html>
+
