@@ -35,6 +35,7 @@ public class Bookstore {
      * gets the list of books currently in the Bookstore, anyone is allowed to request this
      * @return the list of Books in the Bookstore
      */
+    @PermitAll
     public List<Book> getBooks() {
         TypedQuery<Book> query = em.createNamedQuery(Book.FIND_ALL_BOOKS, Book.class);
         return query.getResultList();

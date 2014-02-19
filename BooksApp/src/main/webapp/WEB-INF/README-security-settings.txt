@@ -28,8 +28,8 @@ To setup security on this web app...
         Group table: groups_users
         Group Name Column: groupname
 
-        Digest algorithm: MD5 -- app written with MD5 encryption, use SHA-256 in your apps
         Password Encryption Algorithm: AES
+        Digest algorithm: MD5 -- app written with MD5 encryption, use SHA-256 in your apps
 
         Encoding: Hex
         Charset: UTF-8
