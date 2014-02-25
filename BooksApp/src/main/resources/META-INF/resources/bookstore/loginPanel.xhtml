@@ -1,35 +1,36 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:cc="http://xmlns.jcp.org/jsf/composite"
-  xmlns:h="http://xmlns.jcp.org/jsf/html">
-<cc:interface>
-  <cc:attribute name="useridLabel" default="E-mail address: " />
-  <cc:attribute name="passwordLabel" default="Password: " />
-  <cc:attribute name="loginButtonLabel" default="Login to Bookstore" />
-</cc:interface>
+<ui:component
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+    >
+    <cc:interface>
+        <cc:attribute name="useridLabel" default="E-mail address: " />
+        <cc:attribute name="passwordLabel" default="Password: " />
+        <cc:attribute name="loginButtonLabel" default="Login to Bookstore" />
+    </cc:interface>
 
-<cc:implementation>
-  <form method="post" action="j_security_check">
-  <fieldset>
-      <legend>
-          Please login by supplying the following information
-      </legend>
-      <ul>
-          <li>
-            <label for="j_username"><h:outputText value="#{cc.attrs.useridLabel}" />
-            </label>
-            <input type="text" name="j_username" id="j_username" />
-          </li>
-          <li>
-            <label for="j_password">#{cc.attrs.passwordLabel}  <!-- note: no need for h:outputText -->
-            </label>
-            <input type="password" name="j_password" id="j_password" />
-          </li>
-          <li>
-            <input type="submit" name="submit" value="#{cc.attrs.loginButtonLabel}" />
-          </li>
-      </ul>
-  </fieldset>
-  </form>
-</cc:implementation>
-</html>
+    <cc:implementation>
+        <form method="post" action="j_security_check">
+            <fieldset>
+                <legend>
+                    Please login by supplying the following information
+                </legend>
+                <ul>
+                    <li>
+                        <label for="j_username"> #{cc.attrs.useridLabel}
+                        </label>
+                        <input type="text" name="j_username" id="j_username" />
+                    </li>
+                    <li>
+                        <label for="j_password">#{cc.attrs.passwordLabel}  <!-- note: no need for h:outputText -->
+                        </label>
+                        <input type="password" name="j_password" id="j_password" />
+                    </li>
+                    <li>
+                        <input type="submit" name="submit" value="#{cc.attrs.loginButtonLabel}" />
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </cc:implementation>
+</ui:component>

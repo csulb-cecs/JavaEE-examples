@@ -5,6 +5,10 @@
         <param-value>Development</param-value>
     </context-param>
     <context-param>
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>    
+    <context-param>
         <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name> <!-- SEE: http://stackoverflow.com/questions/13861612/jsf-2-composite-components-inside-web-inf -->
         <param-value>/WEB-INF/resources</param-value> 
     </context-param>

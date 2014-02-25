@@ -20,7 +20,7 @@ import javax.servlet.annotation.WebListener;
 
 /**
  *
- * @author Alvaro Monge <alvaro.monge at csulb dot edu>
+ * @author Alvaro Monge <alvaro.monge@csulb.edu>
  * 
  * Code from a post at StackOverflow by BalusC,
  * See: http://stackoverflow.com/questions/5225013/coerce-to-zero-at-runtime

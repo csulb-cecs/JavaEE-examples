@@ -16,7 +16,7 @@ import javax.inject.Named;
 
 /**
  *
- * @author Alvaro Monge <alvaro.monge at csulb.edu>
+ * @author Alvaro Monge <alvaro.monge@csulb.edu>
  */
 @Named
 @RequestScoped

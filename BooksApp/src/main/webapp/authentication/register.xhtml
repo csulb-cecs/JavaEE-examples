@@ -3,7 +3,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    
+
     <h:body>
         <ui:composition template="/WEB-INF/templates/layout.xhtml">
             <ui:define name="title">Register as a user in the Bookstore</ui:define>
@@ -34,31 +34,37 @@
                                 <h:message for="email" styleClass="message_all" />
                             </li>
                             <li>
-                                <label for="password">Password</label>
-                                <h:inputSecret id="password" value="#{registration.newUser.password}"
-                                               required="true"  requiredMessage="Your must provide a password" />
-                                <h:message for="password" styleClass="message_all" />
-                            </li>
-                            <li>
-                                <label for="passwordConfirmation">Confirm password</label>
-                                <h:inputSecret id="passwordConfirmation" value="#{registration.passwordConfirmation}"
-                                               required="true"  requiredMessage="You need to confirm your password">
-                                    <f:validator validatorId="duplicateFieldValidator" />
-                                    <f:attribute name="field1" value="registration:password" />
-                                    <f:attribute name="fieldNames" value="Passwords" />
-                                </h:inputSecret>
-                                <h:message for="passwordConfirmation" styleClass="message_all" />
-                            </li>
-                            <li>
-                                <h:commandButton value="Register" action="#{registration.registerUser}" />
-                            </li>
-                            <li>
-                                To cancel, return to the <h:link outcome="/index" value="Bookstore home page"></h:link>.
+                                <label for="birthdate">Date of birth [MM-dd-yyyy]</label>
+                                <h:inputText id="birthDate" value="#{registration.newUser.birthDate}" required="false">
+                                    <f:convertDateTime pattern="MM-dd-yyyy"/>
+                                </h:inputText>                            
                             </li>
                         </ul>
+                        <fieldset>
+                            <ul>
+                                <li>
+                                    <label for="password">Password</label>
+                                    <h:inputSecret id="password" value="#{registration.newUser.password}"
+                                                   required="true"  requiredMessage="Your must provide a password" />
+                                    <h:message for="password" styleClass="message_all" />
+                                </li>
+                                <li>
+                                    <label for="passwordConfirmation">Confirm password</label>
+                                    <h:inputSecret id="passwordConfirmation" value="#{registration.passwordConfirmation}"
+                                                   required="true"  requiredMessage="You need to confirm your password">
+                                        <f:validator validatorId="duplicateFieldValidator" />
+                                        <f:attribute name="field1" value="registration:password" />
+                                        <f:attribute name="fieldNames" value="Passwords" />
+                                    </h:inputSecret>
+                                    <h:message for="passwordConfirmation" styleClass="message_all" />
+                                </li>
+                            </ul>
+                        </fieldset> 
+                        <h:commandButton value="Register" action="#{registration.registerUser}" styleClass="button" />
+                        <h:button value="Cancel" outcome="/index" styleClass="button" />
                     </fieldset>
+                    <p><h:messages  styleClass="message_all" /></p>
                 </h:form>
-                <p><h:messages  styleClass="message_all" /></p>
             </ui:define>
         </ui:composition>
     </h:body>

@@ -1,0 +1,148 @@
+/* Css originally by mejobloggs  Design by Aran @ stuio7designs.com  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\000033}}
+body { font-family: "trebuchet ms", verdana, arial, tahoma; font-size: 90%; color: #555; background-color: white; line-height: 180%; margin: 0; padding: 0; text-align: center; }
+
+/* Set the page width */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000315}}
+#wrapper-menu-top, #header, #wrapper-content, #wrapper-footer { width: 85%; margin: 0 auto; text-align: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000321}}
+#wrapper-menu-top { background: white url("images/bg02-white-left.png") no-repeat left top; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000325}}
+#menu-top { background: transparent url("images/bg02-white-right.png") no-repeat right top; overflow: hidden; /* no idea why this works, but it fixes a FF problem */ }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000330}}
+#menu-top ul { margin: 0 20px; padding: 1em 0 0 0; list-style: none; font-size: 85%; float: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000338}}
+#menu-top li { display: inline; float: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000343}}
+#menu-top a { float: left; background: url(images/menuleft.png) no-repeat left top; margin: 0; padding: 0 0 0 4px; text-decoration: none; line-height: 1.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000352}}
+#menu-top a span { background: transparent url(images/menuright.png) no-repeat right top; padding: 5px 15px 4px 6px; color: #5b8fbe; display: block; float: left; cursor: pointer; /* IE doesnt display the hand when you roll over the link for some reason. This fixes it */ }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000361}}
+#menu-top a:hover { background-position: 0% -42px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000362}}
+#menu-top a:hover span { background-position: 100% -42px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000364}}
+#wrapper-header { background: transparent url("images/bg.png") top center repeat-x; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000368}}
+#header { /* background: #eee url('images/csulb.jpg') no-repeat center top;
+*/ background: #eeeeee url("images/csulb.jpg") no-repeat center top; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000375}}
+#wrapper-header2 { background: transparent url("images/bg02-blue-left.png") top left no-repeat; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000379}}
+#wrapper-header3 { background: transparent url("images/bg02-blue-right.png") top right no-repeat; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000383}}
+#header h1 { margin: 0px 50px; padding: 0; height: 192px; line-height: 15em; color: #ccc; font-size: 130%; text-align: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000393}}
+#wrapper-content { background: white url("images/bg02-white-left.png") no-repeat left top; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000397}}
+* html #wrapper-content { height: 1%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\0000399}}
+#content { background: transparent url("images/bg02-white-right.png") no-repeat right top; padding: 5px 245px 5px 40px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003104}}
+#wrapper-menu-page { float: right; width: 180px; margin: 20px 30px 3em 2em; background: transparent url("images/menu.png") no-repeat; text-align: center; line-height: 140%; font-family: "Lucida Grande","Lucida Sans Unicode",arial,sans-serif; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003114}}
+* html #wrapper-menu-page { margin-right: 15px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003116}}
+#menu-page { padding-top: 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003118}}
+#menu-page ul { margin: 0; padding: 0; list-style: none; font-size: 90%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003125}}
+#menu-page h3 { font-size: 75%; text-transform: uppercase; margin: 1em 0 0.3em 0; color: #5b8fbe; font-weight: normal; letter-spacing: 0.15em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003134}}
+#menu-page h3 { margin-top: 10em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003138}}
+#menu-page > h3:first-child { margin-top: 1em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003142}}
+#menu-page a:link, #menu-page a:visited { color: #555; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003143}}
+#menu-page a:hover { color: #5b8fbe; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003145}}
+#wrapper-footer { margin-top: 1em; text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003150}}
+#footer { margin: 0 20px; background-color: #e5f0fc; border: 1px solid #ccc; border-bottom: 0; clear: both; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003158}}
+h2 { font-size: 110%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003159}}
+h3 { font-size: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003161}}
+a:link, a:visited { color: #5b8fbe; text-decoration: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003162}}
+a:hover { color: #666; text-decoration: none; }
+
+/* Rules added for styling the forms. 
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003169}}
+fieldset { width: 80%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003173}}
+fieldset ul { list-style-type: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003177}}
+fieldset label { display: block; float: left; width: 100px; text-align: right; margin-right: 25px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003185}}
+fieldset li { margin: 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003189}}
+fieldset select { text-align: center; margin-left: 3em; font-family: Futura,'Century Gothic',sans-serif; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003195}}
+.selectOneRadio { font-weight: bolder; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003199}}
+.selectOneRadio_Disabled { font-style: italic; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003204}}
+.message_all { color: red; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003210}}
+.error { color: red; font-weight: bold; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003215}}
+table { width: 100%; margin: 0; background: #FFFFFF; border: 1px solid #333333; border-collapse: collapse; font-size: 80%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003224}}
+td, th { border-bottom: 1px solid #333333; padding: 6px 16px; text-align: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003230}}
+th { background: #EEEEEE; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003234}}
+caption { background: #E0E0E0; margin: 0; border: 1px solid #333333; border-bottom: none; padding: 6px 16px; font-weight: bold; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003244}}
+.button { margin-left: 5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alvaro\/Documents\/classes\/423\/GitHub\%20repositories\/examples\/BooksApp\/src\/main\/webapp\/WEB-INF\/resources\/scss\/styles\.scss}line{font-family:\00003248}}
+.button + .button { margin-left: 10em; }

@@ -9,6 +9,7 @@ package edu.csulb.cecs423.booksapp.model;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,6 +18,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -41,6 +43,8 @@ public class User implements Serializable {
     private String email;
     private String firstName;
     private String lastName;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date birthDate;
 
     @Column(length=32, nullable=false)
     private String password;
@@ -169,6 +173,20 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User[email=" + email + ", name=" + firstName + " " + lastName + "]";
+    }
+
+    /**
+     * @return the birthDate
+     */
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    /**
+     * @param birthDate the birthDate to set
+     */
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
 }
